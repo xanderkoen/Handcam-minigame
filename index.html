@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>super ultrasonic spokenjager webcam</title>
+  <link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+
+<link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+<script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils/drawing_utils.js" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@mediapipe/hands/hands.js" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/ml5@latest/dist/ml5.min.js"></script>
+
+<body>
+  <h1>Handcam minigame</h1>
+  <p id="detectanswer">druk op de detect knop om je handvorm te detecteren (predictions moeten aanstaan)</p>
+
+  <section id="demos" class="invisible">
+    <div id="liveView" class="videoView">
+      <button id="webcamButton" class="mdc-button mdc-button--raised">
+        <span class="mdc-button__ripple"></span>
+        <span class="mdc-button__label">ENABLE WEBCAM</span>
+      </button>
+
+      <button id="testButton" class="mdc-button mdc-button--raised">
+        <span class="mdc-button__ripple"></span>
+        <span class="mdc-button__label">Detect pose</span>
+      </button>
+
+      <button id="gameButton" class="mdc-button mdc-button--raised">
+        <span class="mdc-button__ripple"></span>
+        <span class="mdc-button__label">Start minigame</span>
+      </button>
+
+      <div style="position: relative;">
+        <video id="webcam" style="position: absolute" autoplay playsinline></video>
+        <canvas class="output_canvas" id="output_canvas" style="position: absolute; left: 0px; top: 0px;"></canvas>
+      </div>
+
+    </div>
+  </section>
+
+  <section>
+    <p id="gametext" class="game" style="visibility: hidden">minigame text</p>
+    <p id="gamedetection" class="game" style="visibility: hidden">detection result</p>
+    <div id="gamediv" class="flex" style="visibility: hidden">
+      <p id="gametimer" class="game">minigame timer</p>
+      <p id="gamescore" class="game">minigame score</p>
+    </div>
+  </section>
+
+<!-- partial -->
+  <script type="module" src="./script.js"></script>
+
+</body>
+</html>
